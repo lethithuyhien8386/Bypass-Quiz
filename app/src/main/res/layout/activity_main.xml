@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:fillViewport="true" android:background="@color/surface">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="20dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="AI Quiz Scanner" android:textSize="30sp" android:textStyle="bold" android:textColor="#1D1B20"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" android:text="Quét màn hình → hỏi Gemini → chọn đáp án tự động"
+            android:textSize="15sp" android:textColor="#5F5A63"/>
+
+        <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1. Google AI Studio API Key" android:textStyle="bold" android:textSize="18sp"/>
+                <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:hint="API key">
+                    <com.google.android.material.textfield.TextInputEditText android:id="@+id/apiKeyInput" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textPassword" android:singleLine="true"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginTop="8dp">
+                    <Button android:id="@+id/saveKeyButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Lưu API Key"/>
+                    <TextView android:id="@+id/keyStatus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:text="Chưa lưu"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2. Cấp quyền" android:textStyle="bold" android:textSize="18sp"/>
+                <Button android:id="@+id/accessibilityButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Mở quyền Accessibility / chụp màn hình"/>
+                <Button android:id="@+id/overlayButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Cấp quyền hiển thị trên ứng dụng khác"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="3. Điều khiển" android:textStyle="bold" android:textSize="18sp"/>
+                <Button android:id="@+id/testScanButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="🔎 Quét màn hình ngay"/>
+                <Button android:id="@+id/autoButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="▶ Bật tự động quét"/>
+                <TextView android:id="@+id/statusText" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Trạng thái: Đang chờ" android:textSize="15sp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp"
+            android:text="Lưu ý: API key được lưu cục bộ trên thiết bị. Chỉ cấp quyền Accessibility cho ứng dụng bạn tin tưởng. Tính năng tự chạm chỉ hoạt động khi dịch vụ Accessibility đang bật."
+            android:textSize="13sp" android:textColor="#6D6870"/>
+    </LinearLayout>
+</ScrollView>
